@@ -1,0 +1,128 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Fri Nov 27 19:10:05 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000002
+                   .org_3       code   0x000018    program   0x0006f2
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000009      
+                            0x000018    0x000709      
+            1784 out of 33048 program addresses used, program memory utilization is 5%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   again1   0x00001e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again2   0x000022    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again3   0x000052    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again4   0x000056    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again5   0x000250    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again6   0x000254    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    check   0x000616    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   check2   0x000624    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn1   0x000632    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn10   0x0006d4    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn11   0x0006e6    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn12   0x0006f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn2   0x000644    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn3   0x000656    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn4   0x000668    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn5   0x00067a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn6   0x00068c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn7   0x00069e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn8   0x0006b0    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn9   0x0006c2    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    delay   0x00001a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   delay1   0x00004e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   delay2   0x00024c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  lcd_clr   0x000468    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    line2   0x000472    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                     name   0x00047c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    name2   0x0005f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    numid   0x0004ba    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupA   0x0005d0    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupB   0x0005da    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupC   0x0005e4    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupD   0x0005ee    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show#   0x0005be    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show0   0x0005ac    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show1   0x0004f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show2   0x00050a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show3   0x00051c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show4   0x00052e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show5   0x000540    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show6   0x000552    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show7   0x000564    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show8   0x000576    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show9   0x000588    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   showSt   0x00059a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    start   0x0005fc    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                     wcmd   0x00044c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    wdata   0x00045a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    delay   0x00001a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again1   0x00001e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again2   0x000022    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   delay1   0x00004e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again3   0x000052    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again4   0x000056    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   delay2   0x00024c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again5   0x000250    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   again6   0x000254    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                     wcmd   0x00044c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    wdata   0x00045a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  lcd_clr   0x000468    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    line2   0x000472    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                     name   0x00047c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    numid   0x0004ba    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show1   0x0004f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show2   0x00050a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show3   0x00051c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show4   0x00052e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show5   0x000540    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show6   0x000552    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show7   0x000564    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show8   0x000576    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show9   0x000588    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   showSt   0x00059a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show0   0x0005ac    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    show#   0x0005be    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupA   0x0005d0    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupB   0x0005da    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupC   0x0005e4    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   setupD   0x0005ee    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    name2   0x0005f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    start   0x0005fc    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                    check   0x000616    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                   check2   0x000624    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn1   0x000632    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn2   0x000644    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn3   0x000656    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn4   0x000668    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn5   0x00067a    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn6   0x00068c    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn7   0x00069e    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn8   0x0006b0    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                  checkn9   0x0006c2    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn10   0x0006d4    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn11   0x0006e6    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+                 checkn12   0x0006f8    program     static C:\Users\Harriey\School Works\Midterm\midterm.asm
+
+
