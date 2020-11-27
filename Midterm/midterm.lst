@@ -1,4 +1,4 @@
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  1
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  1
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
@@ -18,7 +18,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000000            00003 lp_cnt1 set 0x00
   00000001            00004 lp_cnt2 set 0x01
 000000                00005                 org 0x00 
-000000 EFFE F002      00006                 goto start 
+000000 EFFD F002      00006                 goto start 
 000008                00007                 org 0x08 
 000008 0010           00008                 retfie 
 000018                00009                 org 0x18 
@@ -34,12 +34,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00019 i+=1    
                       00020                 endw
                       00021                 endm
-                      00022 ;10ms Delay
-00001A 0E14           00023 delay   movlw   d'20'
-00001C 6E01           00024                 movwf   lp_cnt2,A
-00001E 0EFA           00025 again1  movlw   d'250'
-000020 6E00           00026                 movwf   lp_cnt1,A
-                      00027 again2  dup_nop d'17'
+                      00022 
+                      00023 ;10ms Delay
+00001A 0E14           00024 delay   movlw   d'20'
+00001C 6E01           00025                 movwf   lp_cnt2,A
+00001E 0EFA           00026 again1  movlw   d'250'
+000020 6E00           00027                 movwf   lp_cnt1,A
+                      00028 again2  dup_nop d'17'
   0000                    M                 variable i
                           M 
   00000000                M i=0
@@ -56,13 +57,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000028 0000               M                 nop
                           M 
   00000004                M i+=1    
-00002A 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  2
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  2
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+00002A 0000               M                 nop
                           M 
   00000005                M i+=1    
 00002C 0000               M                 nop
@@ -102,26 +103,26 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   00000011                M i+=1    
                           M                 endw
-000044 2E00           00028                 decfsz  lp_cnt1,F,A
-000046 D7ED           00029                 bra     again2
-000048 2E01           00030                 decfsz  lp_cnt2,F,A
-00004A D7E9           00031                 bra             again1
-00004C 0012           00032                 return
-                      00033 
-                      00034 ;show delay Name & ID 1second
-00004E 0E50           00035 delay1  movlw   d'80'
-000050 6E01           00036                 movwf   lp_cnt2,A
-000052 0EFA           00037 again3  movlw   d'250'
-000054 6E00           00038                 movwf   lp_cnt1,A
-                      00039 again4  dup_nop d'247'
+000044 2E00           00029                 decfsz  lp_cnt1,F,A
+000046 D7ED           00030                 bra     again2
+000048 2E01           00031                 decfsz  lp_cnt2,F,A
+00004A D7E9           00032                 bra             again1
+00004C 0012           00033                 return
+                      00034 
+                      00035 ;show delay Name & ID 1second
+00004E 0E50           00036 delay1  movlw   d'80'
+000050 6E01           00037                 movwf   lp_cnt2,A
+000052 0EFA           00038 again3  movlw   d'250'
+000054 6E00           00039                 movwf   lp_cnt1,A
+                      00040 again4  dup_nop d'247'
   0000                    M                 variable i
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  3
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  3
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   00000000                M i=0
                           M                 while i < d'247'
 000056 0000               M                 nop
@@ -174,13 +175,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000010                M i+=1    
 000076 0000               M                 nop
                           M 
-  00000011                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  4
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  4
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+  00000011                M i+=1    
 000078 0000               M                 nop
                           M 
   00000012                M i+=1    
@@ -233,13 +234,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   00000022                M i+=1    
 00009A 0000               M                 nop
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  5
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  5
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   00000023                M i+=1    
 00009C 0000               M                 nop
                           M 
@@ -292,13 +293,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0000BC 0000               M                 nop
                           M 
   00000034                M i+=1    
-0000BE 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  6
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  6
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+0000BE 0000               M                 nop
                           M 
   00000035                M i+=1    
 0000C0 0000               M                 nop
@@ -351,13 +352,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   00000045                M i+=1    
 0000E0 0000               M                 nop
                           M 
-  00000046                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  7
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  7
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+  00000046                M i+=1    
 0000E2 0000               M                 nop
                           M 
   00000047                M i+=1    
@@ -410,13 +411,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   00000057                M i+=1    
 000104 0000               M                 nop
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  8
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  8
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   00000058                M i+=1    
 000106 0000               M                 nop
                           M 
@@ -469,13 +470,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000126 0000               M                 nop
                           M 
   00000069                M i+=1    
-000128 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE  9
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE  9
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+000128 0000               M                 nop
                           M 
   0000006A                M i+=1    
 00012A 0000               M                 nop
@@ -528,13 +529,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   0000007A                M i+=1    
 00014A 0000               M                 nop
                           M 
-  0000007B                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 10
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 10
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+  0000007B                M i+=1    
 00014C 0000               M                 nop
                           M 
   0000007C                M i+=1    
@@ -587,13 +588,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   0000008C                M i+=1    
 00016E 0000               M                 nop
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 11
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 11
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   0000008D                M i+=1    
 000170 0000               M                 nop
                           M 
@@ -646,13 +647,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 000190 0000               M                 nop
                           M 
   0000009E                M i+=1    
-000192 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 12
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 12
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+000192 0000               M                 nop
                           M 
   0000009F                M i+=1    
 000194 0000               M                 nop
@@ -705,13 +706,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   000000AF                M i+=1    
 0001B4 0000               M                 nop
                           M 
-  000000B0                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 13
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 13
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+  000000B0                M i+=1    
 0001B6 0000               M                 nop
                           M 
   000000B1                M i+=1    
@@ -764,13 +765,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   000000C1                M i+=1    
 0001D8 0000               M                 nop
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 14
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 14
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   000000C2                M i+=1    
 0001DA 0000               M                 nop
                           M 
@@ -823,13 +824,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
 0001FA 0000               M                 nop
                           M 
   000000D3                M i+=1    
-0001FC 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 15
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 15
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+0001FC 0000               M                 nop
                           M 
   000000D4                M i+=1    
 0001FE 0000               M                 nop
@@ -882,13 +883,13 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
   000000E4                M i+=1    
 00021E 0000               M                 nop
                           M 
-  000000E5                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 16
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 16
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+  000000E5                M i+=1    
 000220 0000               M                 nop
                           M 
   000000E6                M i+=1    
@@ -941,1215 +942,1214 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                           M 
   000000F6                M i+=1    
 000242 0000               M                 nop
-                          M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 17
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 17
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
+                          M 
   000000F7                M i+=1    
                           M                 endw
-000244 2E00           00040                 decfsz  lp_cnt1,F,A
-000246 D707           00041                 bra     again4
-000248 2E01           00042                 decfsz  lp_cnt2,F,A
-00024A D703           00043                 bra             again3
-                      00044 
-                      00045 ;show delay number      0.1second
-00024C 0E10           00046 delay2  movlw   d'16'
-00024E 6E01           00047                 movwf   lp_cnt2,A
-000250 0EFA           00048 again5  movlw   d'250'
-000252 6E00           00049                 movwf   lp_cnt1,A
-                      00050 again6  dup_nop d'247'
+000244 2E00           00041                 decfsz  lp_cnt1,F,A
+000246 D707           00042                 bra     again4
+000248 2E01           00043                 decfsz  lp_cnt2,F,A
+00024A D703           00044                 bra             again3
+00024C 0012           00045                 return
+                      00046 
+                      00047 ;show delay number      0.2second
+00024E 0E10           00048 delay2  movlw   d'16'
+000250 6E01           00049                 movwf   lp_cnt2,A
+000252 0EFA           00050 again5  movlw   d'250'
+000254 6E00           00051                 movwf   lp_cnt1,A
+                      00052 again6  dup_nop d'247'
   0000                    M                 variable i
                           M 
   00000000                M i=0
                           M                 while i < d'247'
-000254 0000               M                 nop
-                          M 
-  00000001                M i+=1    
 000256 0000               M                 nop
                           M 
-  00000002                M i+=1    
+  00000001                M i+=1    
 000258 0000               M                 nop
                           M 
-  00000003                M i+=1    
+  00000002                M i+=1    
 00025A 0000               M                 nop
                           M 
-  00000004                M i+=1    
+  00000003                M i+=1    
 00025C 0000               M                 nop
                           M 
-  00000005                M i+=1    
+  00000004                M i+=1    
 00025E 0000               M                 nop
                           M 
-  00000006                M i+=1    
+  00000005                M i+=1    
 000260 0000               M                 nop
                           M 
-  00000007                M i+=1    
+  00000006                M i+=1    
 000262 0000               M                 nop
                           M 
-  00000008                M i+=1    
+  00000007                M i+=1    
 000264 0000               M                 nop
                           M 
-  00000009                M i+=1    
+  00000008                M i+=1    
 000266 0000               M                 nop
                           M 
-  0000000A                M i+=1    
+  00000009                M i+=1    
 000268 0000               M                 nop
                           M 
-  0000000B                M i+=1    
+  0000000A                M i+=1    
 00026A 0000               M                 nop
                           M 
-  0000000C                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 18
+  0000000B                M i+=1    
+00026C 0000               M                 nop
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 18
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-00026C 0000               M                 nop
                           M 
-  0000000D                M i+=1    
+  0000000C                M i+=1    
 00026E 0000               M                 nop
                           M 
-  0000000E                M i+=1    
+  0000000D                M i+=1    
 000270 0000               M                 nop
                           M 
-  0000000F                M i+=1    
+  0000000E                M i+=1    
 000272 0000               M                 nop
                           M 
-  00000010                M i+=1    
+  0000000F                M i+=1    
 000274 0000               M                 nop
                           M 
-  00000011                M i+=1    
+  00000010                M i+=1    
 000276 0000               M                 nop
                           M 
-  00000012                M i+=1    
+  00000011                M i+=1    
 000278 0000               M                 nop
                           M 
-  00000013                M i+=1    
+  00000012                M i+=1    
 00027A 0000               M                 nop
                           M 
-  00000014                M i+=1    
+  00000013                M i+=1    
 00027C 0000               M                 nop
                           M 
-  00000015                M i+=1    
+  00000014                M i+=1    
 00027E 0000               M                 nop
                           M 
-  00000016                M i+=1    
+  00000015                M i+=1    
 000280 0000               M                 nop
                           M 
-  00000017                M i+=1    
+  00000016                M i+=1    
 000282 0000               M                 nop
                           M 
-  00000018                M i+=1    
+  00000017                M i+=1    
 000284 0000               M                 nop
                           M 
-  00000019                M i+=1    
+  00000018                M i+=1    
 000286 0000               M                 nop
                           M 
-  0000001A                M i+=1    
+  00000019                M i+=1    
 000288 0000               M                 nop
                           M 
-  0000001B                M i+=1    
+  0000001A                M i+=1    
 00028A 0000               M                 nop
                           M 
-  0000001C                M i+=1    
+  0000001B                M i+=1    
 00028C 0000               M                 nop
                           M 
-  0000001D                M i+=1    
+  0000001C                M i+=1    
 00028E 0000               M                 nop
                           M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 19
+  0000001D                M i+=1    
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 19
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-  0000001E                M i+=1    
 000290 0000               M                 nop
                           M 
-  0000001F                M i+=1    
+  0000001E                M i+=1    
 000292 0000               M                 nop
                           M 
-  00000020                M i+=1    
+  0000001F                M i+=1    
 000294 0000               M                 nop
                           M 
-  00000021                M i+=1    
+  00000020                M i+=1    
 000296 0000               M                 nop
                           M 
-  00000022                M i+=1    
+  00000021                M i+=1    
 000298 0000               M                 nop
                           M 
-  00000023                M i+=1    
+  00000022                M i+=1    
 00029A 0000               M                 nop
                           M 
-  00000024                M i+=1    
+  00000023                M i+=1    
 00029C 0000               M                 nop
                           M 
-  00000025                M i+=1    
+  00000024                M i+=1    
 00029E 0000               M                 nop
                           M 
-  00000026                M i+=1    
+  00000025                M i+=1    
 0002A0 0000               M                 nop
                           M 
-  00000027                M i+=1    
+  00000026                M i+=1    
 0002A2 0000               M                 nop
                           M 
-  00000028                M i+=1    
+  00000027                M i+=1    
 0002A4 0000               M                 nop
                           M 
-  00000029                M i+=1    
+  00000028                M i+=1    
 0002A6 0000               M                 nop
                           M 
-  0000002A                M i+=1    
+  00000029                M i+=1    
 0002A8 0000               M                 nop
                           M 
-  0000002B                M i+=1    
+  0000002A                M i+=1    
 0002AA 0000               M                 nop
                           M 
-  0000002C                M i+=1    
+  0000002B                M i+=1    
 0002AC 0000               M                 nop
                           M 
-  0000002D                M i+=1    
+  0000002C                M i+=1    
 0002AE 0000               M                 nop
                           M 
-  0000002E                M i+=1    
+  0000002D                M i+=1    
 0002B0 0000               M                 nop
                           M 
-  0000002F                M i+=1    
+  0000002E                M i+=1    
 0002B2 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 20
+                          M 
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 20
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M 
-  00000030                M i+=1    
+  0000002F                M i+=1    
 0002B4 0000               M                 nop
                           M 
-  00000031                M i+=1    
+  00000030                M i+=1    
 0002B6 0000               M                 nop
                           M 
-  00000032                M i+=1    
+  00000031                M i+=1    
 0002B8 0000               M                 nop
                           M 
-  00000033                M i+=1    
+  00000032                M i+=1    
 0002BA 0000               M                 nop
                           M 
-  00000034                M i+=1    
+  00000033                M i+=1    
 0002BC 0000               M                 nop
                           M 
-  00000035                M i+=1    
+  00000034                M i+=1    
 0002BE 0000               M                 nop
                           M 
-  00000036                M i+=1    
+  00000035                M i+=1    
 0002C0 0000               M                 nop
                           M 
-  00000037                M i+=1    
+  00000036                M i+=1    
 0002C2 0000               M                 nop
                           M 
-  00000038                M i+=1    
+  00000037                M i+=1    
 0002C4 0000               M                 nop
                           M 
-  00000039                M i+=1    
+  00000038                M i+=1    
 0002C6 0000               M                 nop
                           M 
-  0000003A                M i+=1    
+  00000039                M i+=1    
 0002C8 0000               M                 nop
                           M 
-  0000003B                M i+=1    
+  0000003A                M i+=1    
 0002CA 0000               M                 nop
                           M 
-  0000003C                M i+=1    
+  0000003B                M i+=1    
 0002CC 0000               M                 nop
                           M 
-  0000003D                M i+=1    
+  0000003C                M i+=1    
 0002CE 0000               M                 nop
                           M 
-  0000003E                M i+=1    
+  0000003D                M i+=1    
 0002D0 0000               M                 nop
                           M 
-  0000003F                M i+=1    
+  0000003E                M i+=1    
 0002D2 0000               M                 nop
                           M 
-  00000040                M i+=1    
+  0000003F                M i+=1    
 0002D4 0000               M                 nop
                           M 
-  00000041                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 21
+  00000040                M i+=1    
+0002D6 0000               M                 nop
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 21
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0002D6 0000               M                 nop
                           M 
-  00000042                M i+=1    
+  00000041                M i+=1    
 0002D8 0000               M                 nop
                           M 
-  00000043                M i+=1    
+  00000042                M i+=1    
 0002DA 0000               M                 nop
                           M 
-  00000044                M i+=1    
+  00000043                M i+=1    
 0002DC 0000               M                 nop
                           M 
-  00000045                M i+=1    
+  00000044                M i+=1    
 0002DE 0000               M                 nop
                           M 
-  00000046                M i+=1    
+  00000045                M i+=1    
 0002E0 0000               M                 nop
                           M 
-  00000047                M i+=1    
+  00000046                M i+=1    
 0002E2 0000               M                 nop
                           M 
-  00000048                M i+=1    
+  00000047                M i+=1    
 0002E4 0000               M                 nop
                           M 
-  00000049                M i+=1    
+  00000048                M i+=1    
 0002E6 0000               M                 nop
                           M 
-  0000004A                M i+=1    
+  00000049                M i+=1    
 0002E8 0000               M                 nop
                           M 
-  0000004B                M i+=1    
+  0000004A                M i+=1    
 0002EA 0000               M                 nop
                           M 
-  0000004C                M i+=1    
+  0000004B                M i+=1    
 0002EC 0000               M                 nop
                           M 
-  0000004D                M i+=1    
+  0000004C                M i+=1    
 0002EE 0000               M                 nop
                           M 
-  0000004E                M i+=1    
+  0000004D                M i+=1    
 0002F0 0000               M                 nop
                           M 
-  0000004F                M i+=1    
+  0000004E                M i+=1    
 0002F2 0000               M                 nop
                           M 
-  00000050                M i+=1    
+  0000004F                M i+=1    
 0002F4 0000               M                 nop
                           M 
-  00000051                M i+=1    
+  00000050                M i+=1    
 0002F6 0000               M                 nop
                           M 
-  00000052                M i+=1    
+  00000051                M i+=1    
 0002F8 0000               M                 nop
                           M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 22
+  00000052                M i+=1    
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 22
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-  00000053                M i+=1    
 0002FA 0000               M                 nop
                           M 
-  00000054                M i+=1    
+  00000053                M i+=1    
 0002FC 0000               M                 nop
                           M 
-  00000055                M i+=1    
+  00000054                M i+=1    
 0002FE 0000               M                 nop
                           M 
-  00000056                M i+=1    
+  00000055                M i+=1    
 000300 0000               M                 nop
                           M 
-  00000057                M i+=1    
+  00000056                M i+=1    
 000302 0000               M                 nop
                           M 
-  00000058                M i+=1    
+  00000057                M i+=1    
 000304 0000               M                 nop
                           M 
-  00000059                M i+=1    
+  00000058                M i+=1    
 000306 0000               M                 nop
                           M 
-  0000005A                M i+=1    
+  00000059                M i+=1    
 000308 0000               M                 nop
                           M 
-  0000005B                M i+=1    
+  0000005A                M i+=1    
 00030A 0000               M                 nop
                           M 
-  0000005C                M i+=1    
+  0000005B                M i+=1    
 00030C 0000               M                 nop
                           M 
-  0000005D                M i+=1    
+  0000005C                M i+=1    
 00030E 0000               M                 nop
                           M 
-  0000005E                M i+=1    
+  0000005D                M i+=1    
 000310 0000               M                 nop
                           M 
-  0000005F                M i+=1    
+  0000005E                M i+=1    
 000312 0000               M                 nop
                           M 
-  00000060                M i+=1    
+  0000005F                M i+=1    
 000314 0000               M                 nop
                           M 
-  00000061                M i+=1    
+  00000060                M i+=1    
 000316 0000               M                 nop
                           M 
-  00000062                M i+=1    
+  00000061                M i+=1    
 000318 0000               M                 nop
                           M 
-  00000063                M i+=1    
+  00000062                M i+=1    
 00031A 0000               M                 nop
                           M 
-  00000064                M i+=1    
+  00000063                M i+=1    
 00031C 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 23
+                          M 
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 23
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M 
-  00000065                M i+=1    
+  00000064                M i+=1    
 00031E 0000               M                 nop
                           M 
-  00000066                M i+=1    
+  00000065                M i+=1    
 000320 0000               M                 nop
                           M 
-  00000067                M i+=1    
+  00000066                M i+=1    
 000322 0000               M                 nop
                           M 
-  00000068                M i+=1    
+  00000067                M i+=1    
 000324 0000               M                 nop
                           M 
-  00000069                M i+=1    
+  00000068                M i+=1    
 000326 0000               M                 nop
                           M 
-  0000006A                M i+=1    
+  00000069                M i+=1    
 000328 0000               M                 nop
                           M 
-  0000006B                M i+=1    
+  0000006A                M i+=1    
 00032A 0000               M                 nop
                           M 
-  0000006C                M i+=1    
+  0000006B                M i+=1    
 00032C 0000               M                 nop
                           M 
-  0000006D                M i+=1    
+  0000006C                M i+=1    
 00032E 0000               M                 nop
                           M 
-  0000006E                M i+=1    
+  0000006D                M i+=1    
 000330 0000               M                 nop
                           M 
-  0000006F                M i+=1    
+  0000006E                M i+=1    
 000332 0000               M                 nop
                           M 
-  00000070                M i+=1    
+  0000006F                M i+=1    
 000334 0000               M                 nop
                           M 
-  00000071                M i+=1    
+  00000070                M i+=1    
 000336 0000               M                 nop
                           M 
-  00000072                M i+=1    
+  00000071                M i+=1    
 000338 0000               M                 nop
                           M 
-  00000073                M i+=1    
+  00000072                M i+=1    
 00033A 0000               M                 nop
                           M 
-  00000074                M i+=1    
+  00000073                M i+=1    
 00033C 0000               M                 nop
                           M 
-  00000075                M i+=1    
+  00000074                M i+=1    
 00033E 0000               M                 nop
                           M 
-  00000076                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 24
+  00000075                M i+=1    
+000340 0000               M                 nop
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 24
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000340 0000               M                 nop
                           M 
-  00000077                M i+=1    
+  00000076                M i+=1    
 000342 0000               M                 nop
                           M 
-  00000078                M i+=1    
+  00000077                M i+=1    
 000344 0000               M                 nop
                           M 
-  00000079                M i+=1    
+  00000078                M i+=1    
 000346 0000               M                 nop
                           M 
-  0000007A                M i+=1    
+  00000079                M i+=1    
 000348 0000               M                 nop
                           M 
-  0000007B                M i+=1    
+  0000007A                M i+=1    
 00034A 0000               M                 nop
                           M 
-  0000007C                M i+=1    
+  0000007B                M i+=1    
 00034C 0000               M                 nop
                           M 
-  0000007D                M i+=1    
+  0000007C                M i+=1    
 00034E 0000               M                 nop
                           M 
-  0000007E                M i+=1    
+  0000007D                M i+=1    
 000350 0000               M                 nop
                           M 
-  0000007F                M i+=1    
+  0000007E                M i+=1    
 000352 0000               M                 nop
                           M 
-  00000080                M i+=1    
+  0000007F                M i+=1    
 000354 0000               M                 nop
                           M 
-  00000081                M i+=1    
+  00000080                M i+=1    
 000356 0000               M                 nop
                           M 
-  00000082                M i+=1    
+  00000081                M i+=1    
 000358 0000               M                 nop
                           M 
-  00000083                M i+=1    
+  00000082                M i+=1    
 00035A 0000               M                 nop
                           M 
-  00000084                M i+=1    
+  00000083                M i+=1    
 00035C 0000               M                 nop
                           M 
-  00000085                M i+=1    
+  00000084                M i+=1    
 00035E 0000               M                 nop
                           M 
-  00000086                M i+=1    
+  00000085                M i+=1    
 000360 0000               M                 nop
                           M 
-  00000087                M i+=1    
+  00000086                M i+=1    
 000362 0000               M                 nop
                           M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 25
+  00000087                M i+=1    
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 25
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-  00000088                M i+=1    
 000364 0000               M                 nop
                           M 
-  00000089                M i+=1    
+  00000088                M i+=1    
 000366 0000               M                 nop
                           M 
-  0000008A                M i+=1    
+  00000089                M i+=1    
 000368 0000               M                 nop
                           M 
-  0000008B                M i+=1    
+  0000008A                M i+=1    
 00036A 0000               M                 nop
                           M 
-  0000008C                M i+=1    
+  0000008B                M i+=1    
 00036C 0000               M                 nop
                           M 
-  0000008D                M i+=1    
+  0000008C                M i+=1    
 00036E 0000               M                 nop
                           M 
-  0000008E                M i+=1    
+  0000008D                M i+=1    
 000370 0000               M                 nop
                           M 
-  0000008F                M i+=1    
+  0000008E                M i+=1    
 000372 0000               M                 nop
                           M 
-  00000090                M i+=1    
+  0000008F                M i+=1    
 000374 0000               M                 nop
                           M 
-  00000091                M i+=1    
+  00000090                M i+=1    
 000376 0000               M                 nop
                           M 
-  00000092                M i+=1    
+  00000091                M i+=1    
 000378 0000               M                 nop
                           M 
-  00000093                M i+=1    
+  00000092                M i+=1    
 00037A 0000               M                 nop
                           M 
-  00000094                M i+=1    
+  00000093                M i+=1    
 00037C 0000               M                 nop
                           M 
-  00000095                M i+=1    
+  00000094                M i+=1    
 00037E 0000               M                 nop
                           M 
-  00000096                M i+=1    
+  00000095                M i+=1    
 000380 0000               M                 nop
                           M 
-  00000097                M i+=1    
+  00000096                M i+=1    
 000382 0000               M                 nop
                           M 
-  00000098                M i+=1    
+  00000097                M i+=1    
 000384 0000               M                 nop
                           M 
-  00000099                M i+=1    
+  00000098                M i+=1    
 000386 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 26
+                          M 
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 26
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M 
-  0000009A                M i+=1    
+  00000099                M i+=1    
 000388 0000               M                 nop
                           M 
-  0000009B                M i+=1    
+  0000009A                M i+=1    
 00038A 0000               M                 nop
                           M 
-  0000009C                M i+=1    
+  0000009B                M i+=1    
 00038C 0000               M                 nop
                           M 
-  0000009D                M i+=1    
+  0000009C                M i+=1    
 00038E 0000               M                 nop
                           M 
-  0000009E                M i+=1    
+  0000009D                M i+=1    
 000390 0000               M                 nop
                           M 
-  0000009F                M i+=1    
+  0000009E                M i+=1    
 000392 0000               M                 nop
                           M 
-  000000A0                M i+=1    
+  0000009F                M i+=1    
 000394 0000               M                 nop
                           M 
-  000000A1                M i+=1    
+  000000A0                M i+=1    
 000396 0000               M                 nop
                           M 
-  000000A2                M i+=1    
+  000000A1                M i+=1    
 000398 0000               M                 nop
                           M 
-  000000A3                M i+=1    
+  000000A2                M i+=1    
 00039A 0000               M                 nop
                           M 
-  000000A4                M i+=1    
+  000000A3                M i+=1    
 00039C 0000               M                 nop
                           M 
-  000000A5                M i+=1    
+  000000A4                M i+=1    
 00039E 0000               M                 nop
                           M 
-  000000A6                M i+=1    
+  000000A5                M i+=1    
 0003A0 0000               M                 nop
                           M 
-  000000A7                M i+=1    
+  000000A6                M i+=1    
 0003A2 0000               M                 nop
                           M 
-  000000A8                M i+=1    
+  000000A7                M i+=1    
 0003A4 0000               M                 nop
                           M 
-  000000A9                M i+=1    
+  000000A8                M i+=1    
 0003A6 0000               M                 nop
                           M 
-  000000AA                M i+=1    
+  000000A9                M i+=1    
 0003A8 0000               M                 nop
                           M 
-  000000AB                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 27
+  000000AA                M i+=1    
+0003AA 0000               M                 nop
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 27
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0003AA 0000               M                 nop
                           M 
-  000000AC                M i+=1    
+  000000AB                M i+=1    
 0003AC 0000               M                 nop
                           M 
-  000000AD                M i+=1    
+  000000AC                M i+=1    
 0003AE 0000               M                 nop
                           M 
-  000000AE                M i+=1    
+  000000AD                M i+=1    
 0003B0 0000               M                 nop
                           M 
-  000000AF                M i+=1    
+  000000AE                M i+=1    
 0003B2 0000               M                 nop
                           M 
-  000000B0                M i+=1    
+  000000AF                M i+=1    
 0003B4 0000               M                 nop
                           M 
-  000000B1                M i+=1    
+  000000B0                M i+=1    
 0003B6 0000               M                 nop
                           M 
-  000000B2                M i+=1    
+  000000B1                M i+=1    
 0003B8 0000               M                 nop
                           M 
-  000000B3                M i+=1    
+  000000B2                M i+=1    
 0003BA 0000               M                 nop
                           M 
-  000000B4                M i+=1    
+  000000B3                M i+=1    
 0003BC 0000               M                 nop
                           M 
-  000000B5                M i+=1    
+  000000B4                M i+=1    
 0003BE 0000               M                 nop
                           M 
-  000000B6                M i+=1    
+  000000B5                M i+=1    
 0003C0 0000               M                 nop
                           M 
-  000000B7                M i+=1    
+  000000B6                M i+=1    
 0003C2 0000               M                 nop
                           M 
-  000000B8                M i+=1    
+  000000B7                M i+=1    
 0003C4 0000               M                 nop
                           M 
-  000000B9                M i+=1    
+  000000B8                M i+=1    
 0003C6 0000               M                 nop
                           M 
-  000000BA                M i+=1    
+  000000B9                M i+=1    
 0003C8 0000               M                 nop
                           M 
-  000000BB                M i+=1    
+  000000BA                M i+=1    
 0003CA 0000               M                 nop
                           M 
-  000000BC                M i+=1    
+  000000BB                M i+=1    
 0003CC 0000               M                 nop
                           M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 28
+  000000BC                M i+=1    
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 28
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-  000000BD                M i+=1    
 0003CE 0000               M                 nop
                           M 
-  000000BE                M i+=1    
+  000000BD                M i+=1    
 0003D0 0000               M                 nop
                           M 
-  000000BF                M i+=1    
+  000000BE                M i+=1    
 0003D2 0000               M                 nop
                           M 
-  000000C0                M i+=1    
+  000000BF                M i+=1    
 0003D4 0000               M                 nop
                           M 
-  000000C1                M i+=1    
+  000000C0                M i+=1    
 0003D6 0000               M                 nop
                           M 
-  000000C2                M i+=1    
+  000000C1                M i+=1    
 0003D8 0000               M                 nop
                           M 
-  000000C3                M i+=1    
+  000000C2                M i+=1    
 0003DA 0000               M                 nop
                           M 
-  000000C4                M i+=1    
+  000000C3                M i+=1    
 0003DC 0000               M                 nop
                           M 
-  000000C5                M i+=1    
+  000000C4                M i+=1    
 0003DE 0000               M                 nop
                           M 
-  000000C6                M i+=1    
+  000000C5                M i+=1    
 0003E0 0000               M                 nop
                           M 
-  000000C7                M i+=1    
+  000000C6                M i+=1    
 0003E2 0000               M                 nop
                           M 
-  000000C8                M i+=1    
+  000000C7                M i+=1    
 0003E4 0000               M                 nop
                           M 
-  000000C9                M i+=1    
+  000000C8                M i+=1    
 0003E6 0000               M                 nop
                           M 
-  000000CA                M i+=1    
+  000000C9                M i+=1    
 0003E8 0000               M                 nop
                           M 
-  000000CB                M i+=1    
+  000000CA                M i+=1    
 0003EA 0000               M                 nop
                           M 
-  000000CC                M i+=1    
+  000000CB                M i+=1    
 0003EC 0000               M                 nop
                           M 
-  000000CD                M i+=1    
+  000000CC                M i+=1    
 0003EE 0000               M                 nop
                           M 
-  000000CE                M i+=1    
+  000000CD                M i+=1    
 0003F0 0000               M                 nop
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 29
+                          M 
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 29
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                          M 
-  000000CF                M i+=1    
+  000000CE                M i+=1    
 0003F2 0000               M                 nop
                           M 
-  000000D0                M i+=1    
+  000000CF                M i+=1    
 0003F4 0000               M                 nop
                           M 
-  000000D1                M i+=1    
+  000000D0                M i+=1    
 0003F6 0000               M                 nop
                           M 
-  000000D2                M i+=1    
+  000000D1                M i+=1    
 0003F8 0000               M                 nop
                           M 
-  000000D3                M i+=1    
+  000000D2                M i+=1    
 0003FA 0000               M                 nop
                           M 
-  000000D4                M i+=1    
+  000000D3                M i+=1    
 0003FC 0000               M                 nop
                           M 
-  000000D5                M i+=1    
+  000000D4                M i+=1    
 0003FE 0000               M                 nop
                           M 
-  000000D6                M i+=1    
+  000000D5                M i+=1    
 000400 0000               M                 nop
                           M 
-  000000D7                M i+=1    
+  000000D6                M i+=1    
 000402 0000               M                 nop
                           M 
-  000000D8                M i+=1    
+  000000D7                M i+=1    
 000404 0000               M                 nop
                           M 
-  000000D9                M i+=1    
+  000000D8                M i+=1    
 000406 0000               M                 nop
                           M 
-  000000DA                M i+=1    
+  000000D9                M i+=1    
 000408 0000               M                 nop
                           M 
-  000000DB                M i+=1    
+  000000DA                M i+=1    
 00040A 0000               M                 nop
                           M 
-  000000DC                M i+=1    
+  000000DB                M i+=1    
 00040C 0000               M                 nop
                           M 
-  000000DD                M i+=1    
+  000000DC                M i+=1    
 00040E 0000               M                 nop
                           M 
-  000000DE                M i+=1    
+  000000DD                M i+=1    
 000410 0000               M                 nop
                           M 
-  000000DF                M i+=1    
+  000000DE                M i+=1    
 000412 0000               M                 nop
                           M 
-  000000E0                M i+=1    
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 30
+  000000DF                M i+=1    
+000414 0000               M                 nop
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 30
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000414 0000               M                 nop
                           M 
-  000000E1                M i+=1    
+  000000E0                M i+=1    
 000416 0000               M                 nop
                           M 
-  000000E2                M i+=1    
+  000000E1                M i+=1    
 000418 0000               M                 nop
                           M 
-  000000E3                M i+=1    
+  000000E2                M i+=1    
 00041A 0000               M                 nop
                           M 
-  000000E4                M i+=1    
+  000000E3                M i+=1    
 00041C 0000               M                 nop
                           M 
-  000000E5                M i+=1    
+  000000E4                M i+=1    
 00041E 0000               M                 nop
                           M 
-  000000E6                M i+=1    
+  000000E5                M i+=1    
 000420 0000               M                 nop
                           M 
-  000000E7                M i+=1    
+  000000E6                M i+=1    
 000422 0000               M                 nop
                           M 
-  000000E8                M i+=1    
+  000000E7                M i+=1    
 000424 0000               M                 nop
                           M 
-  000000E9                M i+=1    
+  000000E8                M i+=1    
 000426 0000               M                 nop
                           M 
-  000000EA                M i+=1    
+  000000E9                M i+=1    
 000428 0000               M                 nop
                           M 
-  000000EB                M i+=1    
+  000000EA                M i+=1    
 00042A 0000               M                 nop
                           M 
-  000000EC                M i+=1    
+  000000EB                M i+=1    
 00042C 0000               M                 nop
                           M 
-  000000ED                M i+=1    
+  000000EC                M i+=1    
 00042E 0000               M                 nop
                           M 
-  000000EE                M i+=1    
+  000000ED                M i+=1    
 000430 0000               M                 nop
                           M 
-  000000EF                M i+=1    
+  000000EE                M i+=1    
 000432 0000               M                 nop
                           M 
-  000000F0                M i+=1    
+  000000EF                M i+=1    
 000434 0000               M                 nop
                           M 
-  000000F1                M i+=1    
+  000000F0                M i+=1    
 000436 0000               M                 nop
                           M 
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 31
+  000000F1                M i+=1    
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 31
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-  000000F2                M i+=1    
 000438 0000               M                 nop
                           M 
-  000000F3                M i+=1    
+  000000F2                M i+=1    
 00043A 0000               M                 nop
                           M 
-  000000F4                M i+=1    
+  000000F3                M i+=1    
 00043C 0000               M                 nop
                           M 
-  000000F5                M i+=1    
+  000000F4                M i+=1    
 00043E 0000               M                 nop
                           M 
-  000000F6                M i+=1    
+  000000F5                M i+=1    
 000440 0000               M                 nop
+                          M 
+  000000F6                M i+=1    
+000442 0000               M                 nop
                           M 
   000000F7                M i+=1    
                           M                 endw
-000442 2E00           00051                 decfsz  lp_cnt1,F,A
-000444 D707           00052                 bra     again6
-000446 2E01           00053                 decfsz  lp_cnt2,F,A
-000448 D703           00054                 bra             again5
-                      00055 
-                      00056 
-00044A 0012           00057                 return
-                      00058 ;###############################################################################
-                      00059 ;*******************************************************************************
+000444 2E00           00053                 decfsz  lp_cnt1,F,A
+000446 D707           00054                 bra     again6
+000448 2E01           00055                 decfsz  lp_cnt2,F,A
+00044A D703           00056                 bra             again5
+                      00057 
+00044C 0012           00058                 return
+                      00059 ;###############################################################################
                       00060 ;*******************************************************************************
-                      00061 ;###############################################################################
-                      00062 ;Write Command
-00044C 9882           00063 wcmd    bcf             PORTC,4,A
-00044E 9A82           00064                 bcf             PORTC,5,A
-000450 8C82           00065                 bsf             PORTC,6,A
-000452 EC0D F000      00066                 call    delay
-000456 9C82           00067                 bcf             PORTC,6,A
-000458 0012           00068                 return
-                      00069 
-                      00070 ;Write Data
-00045A 8882           00071 wdata   bsf             PORTC,4,A ; RS=1
-00045C 9A82           00072                 bcf             PORTC,5,A ; RW=0
-00045E 8C82           00073                 bsf             PORTC,6,A ; E=1
-000460 EC0D F000      00074                 call    delay
-000464 9C82           00075                 bcf             PORTC,6,A               
-000466 0012           00076                 return
-                      00077 
-                      00078 ;clear lcd display
-000468 0E01           00079 lcd_clr movlw   0x01
-00046A 6E83           00080                 movwf   PORTD,A
-00046C EC26 F002      00081                 call    wcmd
-000470 0012           00082                 return
-                      00083 
-                      00084 ;Show on 2nd line
-000472 0EC0           00085 line2   movlw   0xC0
-000474 6E83           00086                 movwf   PORTD,A
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 32
+                      00061 ;*******************************************************************************
+                      00062 ;###############################################################################
+                      00063 ;Write Command
+00044E 9882           00064 wcmd    bcf             PORTC,4,A
+000450 9A82           00065                 bcf             PORTC,5,A
+000452 8C82           00066                 bsf             PORTC,6,A
+000454 EC0D F000      00067                 call    delay
+000458 9C82           00068                 bcf             PORTC,6,A
+00045A 0012           00069                 return
+                      00070 
+                      00071 ;Write Data
+00045C 8882           00072 wdata   bsf             PORTC,4,A ; RS=1
+00045E 9A82           00073                 bcf             PORTC,5,A ; RW=0
+000460 8C82           00074                 bsf             PORTC,6,A ; E=1
+000462 EC0D F000      00075                 call    delay
+000466 9C82           00076                 bcf             PORTC,6,A               
+000468 0012           00077                 return
+                      00078 
+                      00079 ;clear lcd display
+00046A 0E01           00080 lcd_clr movlw   0x01
+00046C 6E83           00081                 movwf   PORTD,A
+00046E EC27 F002      00082                 call    wcmd
+000472 0012           00083                 return
+                      00084 
+                      00085 ;Show on 2nd line
+000474 0EC0           00086 line2   movlw   0xC0
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 32
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000476 EC26 F002      00087                 call    wcmd
-00047A 0012           00088                 return
-                      00089 ;###############################################################################
-                      00090 ;*******************************************************************************
+000476 6E83           00087                 movwf   PORTD,A
+000478 EC27 F002      00088                 call    wcmd
+00047C 0012           00089                 return
+                      00090 ;###############################################################################
                       00091 ;*******************************************************************************
-                      00092 ;###############################################################################
-                      00093 
-                      00094 ;sub for show name
-00047C 0E48           00095 name    movlw   D'72'
-00047E 6E83           00096                 movwf   PORTD,A
-000480 EC2D F002      00097                 call    wdata
-000484 0E61           00098                 movlw   D'97'
-000486 6E83           00099                 movwf   PORTD,A 
-000488 EC2D F002      00100                 call    wdata   
-00048C 0E72           00101                 movlw   D'114'
-00048E 6E83           00102                 movwf   PORTD,A 
-000490 EC2D F002      00103                 call    wdata   
-000494 0E72           00104                 movlw   D'114'
-000496 6E83           00105                 movwf   PORTD,A 
-000498 EC2D F002      00106                 call    wdata   
-00049C 0E69           00107                 movlw   D'105'
-00049E 6E83           00108                 movwf   PORTD,A
-0004A0 EC2D F002      00109                 call    wdata           
-0004A4 0E65           00110                 movlw   D'101'
-0004A6 6E83           00111                 movwf   PORTD,A
-0004A8 EC2D F002      00112                 call    wdata   
-0004AC 0E79           00113                 movlw   D'121'
-0004AE 6E83           00114                 movwf   PORTD,A
-0004B0 EC2D F002      00115                 call    wdata
-0004B4 EC27 F000      00116                 call    delay1
-0004B8 0012           00117                 return
-                      00118 
-                      00119 ;Show ID number
-0004BA 0E44           00120 numid   movlw   D'68'
-0004BC 6E83           00121                 movwf   PORTD,A
-0004BE EC2D F002      00122                 call    wdata
-0004C2 0E45           00123                 movlw   D'69'
-0004C4 6E83           00124                 movwf   PORTD,A
-0004C6 EC2D F002      00125                 call    wdata
-0004CA 0E39           00126                 movlw   D'57'
-0004CC 6E83           00127                 movwf   PORTD,A
-0004CE EC2D F002      00128                 call    wdata
-0004D2 0E37           00129                 movlw   D'55'
-0004D4 6E83           00130                 movwf   PORTD,A
-0004D6 EC2D F002      00131                 call    wdata
-0004DA 0E33           00132                 movlw   D'51'
-0004DC 6E83           00133                 movwf   PORTD,A
-0004DE EC2D F002      00134                 call    wdata
-0004E2 0E31           00135                 movlw   D'49'
-0004E4 6E83           00136                 movwf   PORTD,A
-0004E6 EC2D F002      00137                 call    wdata
-0004EA 0E32           00138                 movlw   D'50'
-0004EC 6E83           00139                 movwf   PORTD,A
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 33
+                      00092 ;*******************************************************************************
+                      00093 ;###############################################################################
+                      00094 
+                      00095 ;sub for show name
+00047E 0E48           00096 name    movlw   D'72'
+000480 6E83           00097                 movwf   PORTD,A
+000482 EC2E F002      00098                 call    wdata
+000486 0E61           00099                 movlw   D'97'
+000488 6E83           00100                 movwf   PORTD,A 
+00048A EC2E F002      00101                 call    wdata   
+00048E 0E72           00102                 movlw   D'114'
+000490 6E83           00103                 movwf   PORTD,A 
+000492 EC2E F002      00104                 call    wdata   
+000496 0E72           00105                 movlw   D'114'
+000498 6E83           00106                 movwf   PORTD,A 
+00049A EC2E F002      00107                 call    wdata   
+00049E 0E69           00108                 movlw   D'105'
+0004A0 6E83           00109                 movwf   PORTD,A
+0004A2 EC2E F002      00110                 call    wdata           
+0004A6 0E65           00111                 movlw   D'101'
+0004A8 6E83           00112                 movwf   PORTD,A
+0004AA EC2E F002      00113                 call    wdata   
+0004AE 0E79           00114                 movlw   D'121'
+0004B0 6E83           00115                 movwf   PORTD,A
+0004B2 EC2E F002      00116                 call    wdata
+0004B6 EC27 F000      00117                 call    delay1
+0004BA 0012           00118                 return
+                      00119 
+                      00120 ;Show ID number
+0004BC 0E44           00121 numid   movlw   D'68'
+0004BE 6E83           00122                 movwf   PORTD,A
+0004C0 EC2E F002      00123                 call    wdata
+0004C4 0E45           00124                 movlw   D'69'
+0004C6 6E83           00125                 movwf   PORTD,A
+0004C8 EC2E F002      00126                 call    wdata
+0004CC 0E39           00127                 movlw   D'57'
+0004CE 6E83           00128                 movwf   PORTD,A
+0004D0 EC2E F002      00129                 call    wdata
+0004D4 0E37           00130                 movlw   D'55'
+0004D6 6E83           00131                 movwf   PORTD,A
+0004D8 EC2E F002      00132                 call    wdata
+0004DC 0E33           00133                 movlw   D'51'
+0004DE 6E83           00134                 movwf   PORTD,A
+0004E0 EC2E F002      00135                 call    wdata
+0004E4 0E31           00136                 movlw   D'49'
+0004E6 6E83           00137                 movwf   PORTD,A
+0004E8 EC2E F002      00138                 call    wdata
+0004EC 0E32           00139                 movlw   D'50'
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 33
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0004EE EC2D F002      00140                 call    wdata
-0004F2 EC27 F000      00141                 call    delay1
-0004F6 0012           00142                 return
-                      00143 
+0004EE 6E83           00140                 movwf   PORTD,A
+0004F0 EC2E F002      00141                 call    wdata
+0004F4 EC27 F000      00142                 call    delay1
+0004F8 0012           00143                 return
                       00144 
                       00145 
-                      00146 ;###############################################################################
-                      00147 ;*******************************************************************************
+                      00146 
+                      00147 ;###############################################################################
                       00148 ;*******************************************************************************
-                      00149 ;###############################################################################
-                      00150 
-0004F8 EC39 F002      00151 show1   call    line2
-0004FC 0E31           00152                 movlw   D'49'
-0004FE 6E83           00153                 movwf   PORTD,A
-000500 EC2D F002      00154                 call    wdata
-000504 EC26 F001      00155                 call    delay2
-000508 0012           00156                 return
-00050A EC39 F002      00157 show2   call    line2
-00050E 0E32           00158                 movlw   D'50'
-000510 6E83           00159                 movwf   PORTD,A
-000512 EC2D F002      00160                 call    wdata
-000516 EC26 F001      00161                 call    delay2
-00051A 0012           00162                 return
-00051C EC39 F002      00163 show3   call    line2
-000520 0E33           00164                 movlw   D'51'
-000522 6E83           00165                 movwf   PORTD,A
-000524 EC2D F002      00166                 call    wdata
-000528 EC26 F001      00167                 call    delay2
-00052C 0012           00168                 return
-00052E EC39 F002      00169 show4   call    line2
-000532 0E34           00170                 movlw   D'52'
-000534 6E83           00171                 movwf   PORTD,A
-000536 EC2D F002      00172                 call    wdata
-00053A EC26 F001      00173                 call    delay2
-00053E 0012           00174                 return
-000540 EC39 F002      00175 show5   call    line2
-000544 0E35           00176                 movlw   D'53'
-000546 6E83           00177                 movwf   PORTD,A
-000548 EC2D F002      00178                 call    wdata
-00054C EC26 F001      00179                 call    delay2
-000550 0012           00180                 return
-000552 EC39 F002      00181 show6   call    line2
-000556 0E36           00182                 movlw   D'54'
-000558 6E83           00183                 movwf   PORTD,A
-00055A EC2D F002      00184                 call    wdata
-00055E EC26 F001      00185                 call    delay2
-000562 0012           00186                 return
-000564 EC39 F002      00187 show7   call    line2
-000568 0E37           00188                 movlw   D'55'
-00056A 6E83           00189                 movwf   PORTD,A
-00056C EC2D F002      00190                 call    wdata
-000570 EC26 F001      00191                 call    delay2
-000574 0012           00192                 return
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 34
+                      00149 ;*******************************************************************************
+                      00150 ;###############################################################################
+                      00151 
+                      00152 
+                      00153 ;subroutine for keypad
+                      00154 
+0004FA EC3A F002      00155 show1   call    line2
+0004FE 0E31           00156                 movlw   D'49'
+000500 6E83           00157                 movwf   PORTD,A
+000502 EC2E F002      00158                 call    wdata
+000506 EC27 F001      00159                 call    delay2
+00050A 0012           00160                 return
+00050C EC3A F002      00161 show2   call    line2
+000510 0E32           00162                 movlw   D'50'
+000512 6E83           00163                 movwf   PORTD,A
+000514 EC2E F002      00164                 call    wdata
+000518 EC27 F001      00165                 call    delay2
+00051C 0012           00166                 return
+00051E EC3A F002      00167 show3   call    line2
+000522 0E33           00168                 movlw   D'51'
+000524 6E83           00169                 movwf   PORTD,A
+000526 EC2E F002      00170                 call    wdata
+00052A EC27 F001      00171                 call    delay2
+00052E 0012           00172                 return
+000530 EC3A F002      00173 show4   call    line2
+000534 0E34           00174                 movlw   D'52'
+000536 6E83           00175                 movwf   PORTD,A
+000538 EC2E F002      00176                 call    wdata
+00053C EC27 F001      00177                 call    delay2
+000540 0012           00178                 return
+000542 EC3A F002      00179 show5   call    line2
+000546 0E35           00180                 movlw   D'53'
+000548 6E83           00181                 movwf   PORTD,A
+00054A EC2E F002      00182                 call    wdata
+00054E EC27 F001      00183                 call    delay2
+000552 0012           00184                 return
+000554 EC3A F002      00185 show6   call    line2
+000558 0E36           00186                 movlw   D'54'
+00055A 6E83           00187                 movwf   PORTD,A
+00055C EC2E F002      00188                 call    wdata
+000560 EC27 F001      00189                 call    delay2
+000564 0012           00190                 return
+000566 EC3A F002      00191 show7   call    line2
+00056A 0E37           00192                 movlw   D'55'
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 34
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000576 EC39 F002      00193 show8   call    line2
-00057A 0E38           00194                 movlw   D'56'
-00057C 6E83           00195                 movwf   PORTD,A
-00057E EC2D F002      00196                 call    wdata
-000582 EC26 F001      00197                 call    delay2
-000586 0012           00198                 return
-000588 EC39 F002      00199 show9   call    line2
-00058C 0E39           00200                 movlw   D'57'
-00058E 6E83           00201                 movwf   PORTD,A
-000590 EC2D F002      00202                 call    wdata
-000594 EC26 F001      00203                 call    delay2
-000598 0012           00204                 return
-00059A EC39 F002      00205 showSt  call    line2
-00059E 0E2A           00206                 movlw   D'42'
-0005A0 6E83           00207                 movwf   PORTD,A
-0005A2 EC2D F002      00208                 call    wdata
-0005A6 EC26 F001      00209                 call    delay2
-0005AA 0012           00210                 return
-0005AC EC39 F002      00211 show0   call    line2
-0005B0 0E30           00212                 movlw   D'48'
-0005B2 6E83           00213                 movwf   PORTD,A
-0005B4 EC2D F002      00214                 call    wdata
-0005B8 EC26 F001      00215                 call    delay2
-0005BC 0012           00216                 return
-0005BE EC39 F002      00217 show#   call    line2
-0005C2 0E23           00218                 movlw   D'35'
-0005C4 6E83           00219                 movwf   PORTD,A
-0005C6 EC2D F002      00220                 call    wdata
-0005CA EC26 F001      00221                 call    delay2
-0005CE 0012           00222                 return
-                      00223 ;###############################################################################
-                      00224 ;*******************************************************************************
-                      00225 ;*******************************************************************************
-                      00226 ;###############################################################################
+00056C 6E83           00193                 movwf   PORTD,A
+00056E EC2E F002      00194                 call    wdata
+000572 EC27 F001      00195                 call    delay2
+000576 0012           00196                 return
+000578 EC3A F002      00197 show8   call    line2
+00057C 0E38           00198                 movlw   D'56'
+00057E 6E83           00199                 movwf   PORTD,A
+000580 EC2E F002      00200                 call    wdata
+000584 EC27 F001      00201                 call    delay2
+000588 0012           00202                 return
+00058A EC3A F002      00203 show9   call    line2
+00058E 0E39           00204                 movlw   D'57'
+000590 6E83           00205                 movwf   PORTD,A
+000592 EC2E F002      00206                 call    wdata
+000596 EC27 F001      00207                 call    delay2
+00059A 0012           00208                 return
+00059C EC3A F002      00209 showSt  call    line2
+0005A0 0E2A           00210                 movlw   D'42'
+0005A2 6E83           00211                 movwf   PORTD,A
+0005A4 EC2E F002      00212                 call    wdata
+0005A8 EC27 F001      00213                 call    delay2
+0005AC 0012           00214                 return
+0005AE EC3A F002      00215 show0   call    line2
+0005B2 0E30           00216                 movlw   D'48'
+0005B4 6E83           00217                 movwf   PORTD,A
+0005B6 EC2E F002      00218                 call    wdata
+0005BA EC27 F001      00219                 call    delay2
+0005BE 0012           00220                 return
+0005C0 EC3A F002      00221 show#   call    line2
+0005C4 0E23           00222                 movlw   D'35'
+0005C6 6E83           00223                 movwf   PORTD,A
+0005C8 EC2E F002      00224                 call    wdata
+0005CC EC27 F001      00225                 call    delay2
+0005D0 0012           00226                 return
                       00227 
-                      00228 
-0005D0 8881           00229 setupA  bsf             PORTB,4,A
-0005D2 9A81           00230                 bcf             PORTB,5,A
-0005D4 9C81           00231                 bcf             PORTB,6,A
-0005D6 9E81           00232                 bcf             PORTB,7,A
-0005D8 0012           00233                 return
-                      00234         
-0005DA 9881           00235 setupB  bcf             PORTB,4,A
-0005DC 8A81           00236                 bsf             PORTB,5,A
-0005DE 9C81           00237                 bcf             PORTB,6,A
-0005E0 9E81           00238                 bcf             PORTB,7,A
-0005E2 0012           00239                 return
-                      00240 
-0005E4 9881           00241 setupC  bcf             PORTB,4,A
-0005E6 9A81           00242                 bcf             PORTB,5,A
-0005E8 8C81           00243                 bsf             PORTB,6,A
-0005EA 9E81           00244                 bcf             PORTB,7,A
-0005EC 0012           00245                 return
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 35
+                      00228 ;###############################################################################
+                      00229 ;*******************************************************************************
+                      00230 ;*******************************************************************************
+                      00231 ;###############################################################################
+                      00232 ;subroutine to setup keypad
+                      00233 
+0005D2 8881           00234 setupA  bsf             PORTB,4,A
+0005D4 9A81           00235                 bcf             PORTB,5,A
+0005D6 9C81           00236                 bcf             PORTB,6,A
+0005D8 9E81           00237                 bcf             PORTB,7,A
+0005DA 0012           00238                 return
+                      00239         
+0005DC 9881           00240 setupB  bcf             PORTB,4,A
+0005DE 8A81           00241                 bsf             PORTB,5,A
+0005E0 9C81           00242                 bcf             PORTB,6,A
+0005E2 9E81           00243                 bcf             PORTB,7,A
+0005E4 0012           00244                 return
+                      00245 
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 35
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-                      00246 
-0005EE 9881           00247 setupD  bcf             PORTB,4,A
-0005F0 9A81           00248                 bcf             PORTB,5,A
-0005F2 9C81           00249                 bcf             PORTB,6,A
-0005F4 8E81           00250                 bsf             PORTB,7,A
-0005F6 0012           00251                 return
-                      00252 
-0005F8 0000           00253 name2   nop
-0005FA 0012           00254                 return
-                      00255                 
-                      00256 ;###############################################################################
-                      00257 ;*******************************************************************************
-                      00258 ;*******************************************************************************
-                      00259 ;###############################################################################
-                      00260 
-                      00261 
+0005E6 9881           00246 setupC  bcf             PORTB,4,A
+0005E8 9A81           00247                 bcf             PORTB,5,A
+0005EA 8C81           00248                 bsf             PORTB,6,A
+0005EC 9E81           00249                 bcf             PORTB,7,A
+0005EE 0012           00250                 return
+                      00251 
+0005F0 9881           00252 setupD  bcf             PORTB,4,A
+0005F2 9A81           00253                 bcf             PORTB,5,A
+0005F4 9C81           00254                 bcf             PORTB,6,A
+0005F6 8E81           00255                 bsf             PORTB,7,A
+0005F8 0012           00256                 return
+                      00257         
+                      00258 ;###############################################################################
+                      00259 ;*******************************************************************************
+                      00260 ;*******************************************************************************
+                      00261 ;###############################################################################
                       00262 
                       00263 
                       00264 
-0005FC 0E03           00265 start   movlw   B'0000011'
-0005FE 6E94           00266                 movwf   TRISC,A
-000600 6A95           00267                 clrf    TRISD,A
-000602 0E0E           00268                 movlw   B'00001110'
-000604 6E93           00269                 movwf   TRISB,A
+0005FA 0E03           00265 start   movlw   B'0000011'
+0005FC 6E94           00266                 movwf   TRISC,A
+0005FE 6A95           00267                 clrf    TRISD,A
+000600 0E0E           00268                 movlw   B'00001110'
+000602 6E93           00269                 movwf   TRISB,A
                       00270 
                       00271                 ;2line 5x7 matrix
-000606 0E38           00272                 movlw   0x38
-000608 6E83           00273                 movwf   PORTD,A
-00060A EC26 F002      00274                 call    wcmd
+000604 0E38           00272                 movlw   0x38
+000606 6E83           00273                 movwf   PORTD,A
+000608 EC27 F002      00274                 call    wcmd
                       00275                 
                       00276                 ;on display and blink cursor
-00060E 0E0F           00277                 movlw   0x0F
-000610 6E83           00278                 movwf   PORTD,A
-000612 EC26 F002      00279                 call    wcmd
+00060C 0E0F           00277                 movlw   0x0F
+00060E 6E83           00278                 movwf   PORTD,A
+000610 EC27 F002      00279                 call    wcmd
                       00280 
-000616 A082           00281 check   btfss   PORTC,0,A
-000618 D005           00282                 bra             check2
-00061A EC3E F002      00283                 call    name
-00061E EC34 F002      00284                 call    lcd_clr
-000622 D000           00285                 bra             check2
-000624 A282           00286 check2  btfss   PORTC,1,A
-000626 D005           00287                 bra             checkn1
-000628 EC5D F002      00288                 call    numid
-00062C EC34 F002      00289                 call    lcd_clr
-000630 D000           00290                 bra             checkn1
+000614 A082           00281 check   btfss   PORTC,0,A
+000616 D005           00282                 bra             check2
+000618 EC3F F002      00283                 call    name
+00061C EC35 F002      00284                 call    lcd_clr
+000620 D000           00285                 bra             check2
+000622 A282           00286 check2  btfss   PORTC,1,A
+000624 D005           00287                 bra             checkn1
+000626 EC5E F002      00288                 call    numid
+00062A EC35 F002      00289                 call    lcd_clr
+00062E D000           00290                 bra             checkn1
                       00291 
                       00292 ;///////////////////////////////////////////////////////////////////////////////
                       00293 
-000632 ECE8 F002      00294 checkn1         call    setupA
-000636 A281           00295                         btfss   PORTB,1,A
-000638 D005           00296                         bra             checkn2
-00063A EC7C F002      00297                         call    show1
-00063E EC34 F002      00298                         call    lcd_clr
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 36
+000630 ECE9 F002      00294 checkn1         call    setupA
+000634 A281           00295                         btfss   PORTB,1,A
+000636 D005           00296                         bra             checkn2
+000638 EC7D F002      00297                         call    show1
+00063C EC35 F002      00298                         call    lcd_clr
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 36
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-000642 D000           00299                         bra     checkn2
+000640 D000           00299                         bra     checkn2
                       00300 
-000644 ECE8 F002      00301 checkn2         call    setupA
-000648 A481           00302                         btfss   PORTB,2,A
-00064A D005           00303                         bra             checkn3
-00064C EC85 F002      00304                         call    show2
-000650 EC34 F002      00305                         call    lcd_clr
-000654 D000           00306                         bra     checkn3
+000642 ECE9 F002      00301 checkn2         call    setupA
+000646 A481           00302                         btfss   PORTB,2,A
+000648 D005           00303                         bra             checkn3
+00064A EC86 F002      00304                         call    show2
+00064E EC35 F002      00305                         call    lcd_clr
+000652 D000           00306                         bra     checkn3
                       00307 
-000656 ECE8 F002      00308 checkn3         call    setupA
-00065A A681           00309                         btfss   PORTB,3,A
-00065C D005           00310                         bra             checkn4
-00065E EC8E F002      00311                         call    show3
-000662 EC34 F002      00312                         call    lcd_clr
-000666 D000           00313                         bra     checkn4
+000654 ECE9 F002      00308 checkn3         call    setupA
+000658 A681           00309                         btfss   PORTB,3,A
+00065A D005           00310                         bra             checkn4
+00065C EC8F F002      00311                         call    show3
+000660 EC35 F002      00312                         call    lcd_clr
+000664 D000           00313                         bra     checkn4
                       00314 
                       00315 ;///////////////////////////////////////////////////////////////////////////////
-000668 ECED F002      00316 checkn4         call    setupB
-00066C A281           00317                         btfss   PORTB,1,A
-00066E D005           00318                         bra             checkn5
-000670 EC97 F002      00319                         call    show4
-000674 EC34 F002      00320                         call    lcd_clr
-000678 D000           00321                         bra     checkn5
-00067A ECED F002      00322 checkn5         call    setupB
-00067E A481           00323                         btfss   PORTB,2,A
-000680 D005           00324                         bra             checkn6
-000682 ECA0 F002      00325                         call    show5
-000686 EC34 F002      00326                         call    lcd_clr
-00068A D000           00327                         bra     checkn6
-00068C ECED F002      00328 checkn6         call    setupB
-000690 A681           00329                         btfss   PORTB,3,A
-000692 D005           00330                         bra             checkn7
-000694 ECA9 F002      00331                         call    show6
-000698 EC34 F002      00332                         call    lcd_clr
-00069C D000           00333                         bra     checkn7
+000666 ECEE F002      00316 checkn4         call    setupB
+00066A A281           00317                         btfss   PORTB,1,A
+00066C D005           00318                         bra             checkn5
+00066E EC98 F002      00319                         call    show4
+000672 EC35 F002      00320                         call    lcd_clr
+000676 D000           00321                         bra     checkn5
+000678 ECEE F002      00322 checkn5         call    setupB
+00067C A481           00323                         btfss   PORTB,2,A
+00067E D005           00324                         bra             checkn6
+000680 ECA1 F002      00325                         call    show5
+000684 EC35 F002      00326                         call    lcd_clr
+000688 D000           00327                         bra     checkn6
+00068A ECEE F002      00328 checkn6         call    setupB
+00068E A681           00329                         btfss   PORTB,3,A
+000690 D005           00330                         bra             checkn7
+000692 ECAA F002      00331                         call    show6
+000696 EC35 F002      00332                         call    lcd_clr
+00069A D000           00333                         bra     checkn7
                       00334 
                       00335 ;///////////////////////////////////////////////////////////////////////////////
-00069E ECF2 F002      00336 checkn7         call    setupC
-0006A2 A281           00337                         btfss   PORTB,1,A
-0006A4 D005           00338                         bra             checkn8
-0006A6 ECB2 F002      00339                         call    show7
-0006AA EC34 F002      00340                         call    lcd_clr
-0006AE D000           00341                         bra     checkn8
-0006B0 ECF2 F002      00342 checkn8         call    setupC
-0006B4 A481           00343                         btfss   PORTB,2,A
-0006B6 D005           00344                         bra             checkn9
-0006B8 ECBB F002      00345                         call    show8
-0006BC EC34 F002      00346                         call    lcd_clr
-0006C0 D000           00347                         bra     checkn9
-0006C2 ECF2 F002      00348 checkn9         call    setupC
-0006C6 A681           00349                         btfss   PORTB,3,A
-0006C8 D005           00350                         bra             checkn10
-0006CA ECC4 F002      00351                         call    show9
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 37
+00069C ECF3 F002      00336 checkn7         call    setupC
+0006A0 A281           00337                         btfss   PORTB,1,A
+0006A2 D005           00338                         bra             checkn8
+0006A4 ECB3 F002      00339                         call    show7
+0006A8 EC35 F002      00340                         call    lcd_clr
+0006AC D000           00341                         bra     checkn8
+0006AE ECF3 F002      00342 checkn8         call    setupC
+0006B2 A481           00343                         btfss   PORTB,2,A
+0006B4 D005           00344                         bra             checkn9
+0006B6 ECBC F002      00345                         call    show8
+0006BA EC35 F002      00346                         call    lcd_clr
+0006BE D000           00347                         bra     checkn9
+0006C0 ECF3 F002      00348 checkn9         call    setupC
+0006C4 A681           00349                         btfss   PORTB,3,A
+0006C6 D005           00350                         bra             checkn10
+0006C8 ECC5 F002      00351                         call    show9
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 37
 
 
 LOC  OBJECT CODE     LINE SOURCE TEXT
   VALUE
 
-0006CE EC34 F002      00352                         call    lcd_clr
-0006D2 D000           00353                         bra     checkn10
+0006CC EC35 F002      00352                         call    lcd_clr
+0006D0 D000           00353                         bra     checkn10
                       00354 
                       00355 ;///////////////////////////////////////////////////////////////////////////////
-0006D4 ECF7 F002      00356 checkn10        call    setupD
-0006D8 A281           00357                         btfss   PORTB,1,A
-0006DA D005           00358                         bra             checkn11
-0006DC ECCD F002      00359                         call    showSt
-0006E0 EC34 F002      00360                         call    lcd_clr
-0006E4 D000           00361                         bra     checkn11
-0006E6 ECF7 F002      00362 checkn11        call    setupD
-0006EA A481           00363                         btfss   PORTB,2,A
-0006EC D005           00364                         bra             checkn12
-0006EE ECD6 F002      00365                         call    show0
-0006F2 EC34 F002      00366                         call    lcd_clr
-0006F6 D000           00367                         bra     checkn12
-0006F8 ECF7 F002      00368 checkn12        call    setupD
-0006FC A681           00369                         btfss   PORTB,3,A
-0006FE D78B           00370                         bra             check
-000700 ECDF F002      00371                         call    show#
-000704 EC34 F002      00372                         call    lcd_clr
-000708 D786           00373                         bra     check
+0006D2 ECF8 F002      00356 checkn10        call    setupD
+0006D6 A281           00357                         btfss   PORTB,1,A
+0006D8 D005           00358                         bra             checkn11
+0006DA ECCE F002      00359                         call    showSt
+0006DE EC35 F002      00360                         call    lcd_clr
+0006E2 D000           00361                         bra     checkn11
+0006E4 ECF8 F002      00362 checkn11        call    setupD
+0006E8 A481           00363                         btfss   PORTB,2,A
+0006EA D005           00364                         bra             checkn12
+0006EC ECD7 F002      00365                         call    show0
+0006F0 EC35 F002      00366                         call    lcd_clr
+0006F4 D000           00367                         bra     checkn12
+0006F6 ECF8 F002      00368 checkn12        call    setupD
+0006FA A681           00369                         btfss   PORTB,3,A
+0006FC D78B           00370                         bra             check
+0006FE ECE0 F002      00371                         call    show#
+000702 EC35 F002      00372                         call    lcd_clr
+000706 D786           00373                         bra     check
                       00374 
                       00375 
                       00376 
@@ -2159,7 +2159,7 @@ LOC  OBJECT CODE     LINE SOURCE TEXT
                       00380 ;*******************************************************************************
                       00381 ;###############################################################################
                       00382                 end
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 38
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 38
 
 
 SYMBOL TABLE
@@ -2218,7 +2218,7 @@ BRG16                             00000003
 BRGH                              00000002
 BSR                               00000FE0
 BTOEE                             00000004
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 39
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 39
 
 
 SYMBOL TABLE
@@ -2277,7 +2277,7 @@ CM2                               00000002
 CMCON                             00000FB4
 CMIE                              00000006
 CMIF                              00000006
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 40
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 40
 
 
 SYMBOL TABLE
@@ -2336,7 +2336,7 @@ EEIP                              00000004
 EEPGD                             00000007
 ENDP0                             00000003
 ENDP1                             00000004
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 41
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 41
 
 
 SYMBOL TABLE
@@ -2395,7 +2395,7 @@ HLVDL3                            00000003
 I2C_DAT                           00000005
 I2C_READ                          00000002
 I2C_START                         00000003
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 42
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 42
 
 
 SYMBOL TABLE
@@ -2454,7 +2454,7 @@ LATA6                             00000006
 LATB                              00000F8A
 LATB0                             00000000
 LATB1                             00000001
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 43
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 43
 
 
 SYMBOL TABLE
@@ -2513,7 +2513,7 @@ NOT_T1SYNC                        00000002
 NOT_T3SYNC                        00000002
 NOT_TO                            00000003
 NOT_W                             00000002
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 44
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 44
 
 
 SYMBOL TABLE
@@ -2572,7 +2572,7 @@ PORTB                             00000F81
 PORTC                             00000F82
 PORTD                             00000F83
 PORTE                             00000F84
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 45
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 45
 
 
 SYMBOL TABLE
@@ -2631,7 +2631,7 @@ RC7                               00000007
 RCEN                              00000003
 RCIDL                             00000006
 RCIE                              00000005
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 46
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 46
 
 
 SYMBOL TABLE
@@ -2690,7 +2690,7 @@ SPP3                              00000003
 SPP4                              00000004
 SPP5                              00000005
 SPP6                              00000006
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 47
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 47
 
 
 SYMBOL TABLE
@@ -2749,7 +2749,7 @@ T0PS0                             00000000
 T0PS1                             00000001
 T0PS2                             00000002
 T0SE                              00000004
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 48
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 48
 
 
 SYMBOL TABLE
@@ -2808,7 +2808,7 @@ TMR3CS                            00000001
 TMR3H                             00000FB3
 TMR3IE                            00000001
 TMR3IF                            00000001
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 49
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 49
 
 
 SYMBOL TABLE
@@ -2867,7 +2867,7 @@ TRNIE                             00000003
 TRNIF                             00000003
 TUN0                              00000000
 TUN1                              00000001
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 50
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 50
 
 
 SYMBOL TABLE
@@ -2926,7 +2926,7 @@ USBIP                             00000005
 USTAT                             00000F6C
 UTEYE                             00000007
 UTRDIS                            00000003
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 51
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 51
 
 
 SYMBOL TABLE
@@ -2985,7 +2985,7 @@ _CPB_OFF_5H                       000000FF
 _CPB_ON_5H                        000000BF
 _CPD_OFF_5H                       000000FF
 _CPD_ON_5H                        0000007F
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 52
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 52
 
 
 SYMBOL TABLE
@@ -3044,7 +3044,7 @@ _MCLRE_ON_3H                      000000FF
 _PBADEN_OFF_3H                    000000FD
 _PBADEN_ON_3H                     000000FF
 _PLLDIV_10_1L                     000000FE
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 53
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 53
 
 
 SYMBOL TABLE
@@ -3103,7 +3103,7 @@ __18F4550                         00000001
 __DEBUG                           1
 again1                            0000001E
 again2                            00000022
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 54
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 54
 
 
 SYMBOL TABLE
@@ -3111,54 +3111,53 @@ SYMBOL TABLE
 
 again3                            00000052
 again4                            00000056
-again5                            00000250
-again6                            00000254
-check                             00000616
-check2                            00000624
-checkn1                           00000632
-checkn10                          000006D4
-checkn11                          000006E6
-checkn12                          000006F8
-checkn2                           00000644
-checkn3                           00000656
-checkn4                           00000668
-checkn5                           0000067A
-checkn6                           0000068C
-checkn7                           0000069E
-checkn8                           000006B0
-checkn9                           000006C2
+again5                            00000252
+again6                            00000256
+check                             00000614
+check2                            00000622
+checkn1                           00000630
+checkn10                          000006D2
+checkn11                          000006E4
+checkn12                          000006F6
+checkn2                           00000642
+checkn3                           00000654
+checkn4                           00000666
+checkn5                           00000678
+checkn6                           0000068A
+checkn7                           0000069C
+checkn8                           000006AE
+checkn9                           000006C0
 delay                             0000001A
 delay1                            0000004E
-delay2                            0000024C
+delay2                            0000024E
 dup_nop                           
 i                                 000000F7
-lcd_clr                           00000468
-line2                             00000472
+lcd_clr                           0000046A
+line2                             00000474
 lp_cnt1                           00000000
 lp_cnt2                           00000001
-name                              0000047C
-name2                             000005F8
-numid                             000004BA
-setupA                            000005D0
-setupB                            000005DA
-setupC                            000005E4
-setupD                            000005EE
-show#                             000005BE
-show0                             000005AC
-show1                             000004F8
-show2                             0000050A
-show3                             0000051C
-show4                             0000052E
-show5                             00000540
-show6                             00000552
-show7                             00000564
-show8                             00000576
-show9                             00000588
-showSt                            0000059A
-start                             000005FC
-wcmd                              0000044C
-wdata                             0000045A
-MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:10:03         PAGE 55
+name                              0000047E
+numid                             000004BC
+setupA                            000005D2
+setupB                            000005DC
+setupC                            000005E6
+setupD                            000005F0
+show#                             000005C0
+show0                             000005AE
+show1                             000004FA
+show2                             0000050C
+show3                             0000051E
+show4                             00000530
+show5                             00000542
+show6                             00000554
+show7                             00000566
+show8                             00000578
+show9                             0000058A
+showSt                            0000059C
+start                             000005FA
+wcmd                              0000044E
+wdata                             0000045C
+MPASM  5.51                       MIDTERM.ASM   11-27-2020  19:43:34         PAGE 55
 
 
 MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
@@ -3192,12 +3191,12 @@ MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
 0640 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 0680 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
 06C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
-0700 : XXXXXXXXXX------ ---------------- ---------------- ----------------
+0700 : XXXXXXXX-------- ---------------- ---------------- ----------------
 
 All other memory blocks unused.
 
-Program Memory Bytes Used:  1784
-Program Memory Bytes Free: 30984
+Program Memory Bytes Used:  1782
+Program Memory Bytes Free: 30986
 
 
 Errors   :     0
